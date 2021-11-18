@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Story.Models.Bike>
+
+@{
+    ViewBag.Title = "Велосипеды";
+}
+<div class="col-md-8">
+    <h2>Велосипеды</h2>
+
+    <p>
+        @foreach (var r in ViewBag.rol)
+        {
+            if (r == "admin")
+            {
+                @Html.ActionLink("Создать страницу товара", "Create")}
+        }
+            </p>
+</div>
+<div class="col-md-4">
+    <p> Поиск по типу:</p>
+    <form method="post">
+        <input type="text" name="Name"/>
+        <input type="submit" value="Поиск" />
+    </form>
+</div>
+<table class="table table-condensed" >
+    <tr>
+        <th>
+           @* @Html.DisplayNameFor(model => model.Img)*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Maker)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BikeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wheel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frame)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <asp:Image runat="server" ImageUrl="@Html.DisplayFor(modelItem => item.Img)"  width="100px" height="100px"/>
+            <img src="@Html.DisplayFor(modelItem => item.Img)"  width="100" height="100">
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maker)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BikeType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Wheel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frame)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @foreach (var r in ViewBag.rol)
+            {
+                if (r == "admin")
+                {
+                    @Html.ActionLink("Редактировать", "Edit", new { id = item.BikeID })
+                }
+            }
+            
+            |
+            
+            @Html.ActionLink("Подробней", "Details", new { id = item.BikeID })|
+            
+            @foreach (var r in ViewBag.rol)
+            {
+                if (r == "admin")
+                {
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.BikeID })
+                }
+            }
+        </td>
+    </tr>
+}
+
+</table>

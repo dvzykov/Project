@@ -1,0 +1,102 @@
+﻿@model Story.Models.Bike
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление товара из базы</h2>
+
+<h3>Внимание! Вы собираетесь удалить страницу товара</h3>
+<div>
+    <h4>Велосипеды</h4>
+    @Html.ActionLink("Назад", "Index")
+    <hr />
+    <div class="col-md-8">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Img)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Img)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Maker)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Maker)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BikeType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BikeType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Weight)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Weight)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Wheel)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Wheel)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Frame)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Frame)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Number)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Number)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Comment)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Comment)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <img class="img-thumbnail" src="@Html.DisplayFor(model => model.Img)" width="200" height="200">
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> 
+        </div>
+    }
+</div>

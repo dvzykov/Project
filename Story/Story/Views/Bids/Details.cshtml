@@ -1,0 +1,123 @@
+﻿@model Story.Models.Bid
+
+@{
+    ViewBag.Title = "Подробности заказа";
+}
+
+<h2>Подробности заказа</h2>
+
+<div class="row" >
+    @*<h4>Bid</h4>*@
+    <div>
+        @Html.ActionLink("Редактировать заказ", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Назад", "Index")
+    </div>
+    <hr />
+    <div class="col-md-8">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.Img)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Img)
+                </dd>*@
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Maker)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Maker)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BikeType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BikeType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Wheel)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Wheel)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Frame)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Frame)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BidDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BidDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Comment)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Comment)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="col-md-4">
+
+        @*@Html.DisplayNameFor(model => model.Img) <br />*@
+
+        <img class="img-thumbnail" src="@Html.DisplayFor(model => model.Img)" width="200" height="200">
+    </div>
+    
+</div>

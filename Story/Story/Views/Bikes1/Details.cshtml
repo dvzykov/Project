@@ -1,0 +1,127 @@
+﻿@model Story.Models.Bike
+
+@{
+    ViewBag.Title = "Подробно";
+}
+
+<h2>Подробно о товаре</h2>
+
+
+    <h4>Велосипелы</h4>
+    <div>
+        @foreach (var r in ViewBag.rol)
+        {
+            if (r == "admin")
+            {
+                @Html.ActionLink("Редактировать", "Edit", new { id = Model.BikeID })
+            }
+        }
+        |
+        @Html.ActionLink("Назад", "Index")
+    </div>
+    <hr />
+    <div class="col-md-8">
+        <dl class="dl-horizontal">
+            
+            
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Maker)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Maker)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BikeType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BikeType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Weight)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Weight)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Wheel)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Wheel)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Frame)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Frame)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Number)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Number)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Comment)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Comment)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="col-md-4">
+        
+            @*@Html.DisplayNameFor(model => model.Img) <br />*@
+        
+        <img class="img-thumbnail" src="@Html.DisplayFor(model => model.Img)" width="200" height="200">
+    </div>
+<h3>Для подачи заявления на данный товар заполните форму ниже:</h3>
+<div>
+    <form method="post" action="">
+        <table>
+            <tr>
+                <td><p>Введите свою фамилию </p></td>
+                <td><input type="text" name="FirstName" /> </td>
+                <td><p>Введите свое имя </p></td>
+                <td><input type="text" name="LastName" /> </td>
+            </tr>
+            <tr>
+                <td><p>Адрес доставки </p></td>
+                <td><input type="text" name="Address" /> </td>
+                <td><p> Ваш телефон для связи </p></td>
+                <td><input type="text" name="Phone" /> </td>
+            </tr>
+            <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+        </table>
+        <input type="hidden" name="Img" value="@Html.DisplayFor(model => model.Img)" />
+        <input type="hidden" name="Maker" value="@Html.DisplayFor(model => model.Maker)" />
+        <input type="hidden" name="BikeType" value="@Html.DisplayFor(model => model.BikeType)" />
+        <input type="hidden" name="Wheel" value="@Html.DisplayFor(model => model.Wheel)" />
+        <input type="hidden" name="Frame" value="@Html.DisplayFor(model => model.Frame)" />
+        <input type="hidden" name="Price" value="@Html.DisplayFor(model => model.Price)" />
+    </form>
+    
+</div>
+

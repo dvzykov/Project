@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Story.Models.Bid>
+
+@{
+    ViewBag.Title = "Заказы";
+}
+
+<h2>Заказы</h2>
+
+<p>
+    @*@Html.ActionLink("Оформить заказ", "Create")*@
+</p>
+<table class="table table table-condensed">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Img)*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Maker)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BikeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wheel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frame)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BidDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            <asp:Image runat="server" ImageUrl="@Html.DisplayFor(modelItem => item.Img)" width="100px" height="100px" />
+            <img src="@Html.DisplayFor(modelItem => item.Img)" width="100" height="100">
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maker)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BikeType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Wheel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frame)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BidDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Детали", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
