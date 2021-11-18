@@ -1,0 +1,21 @@
+mcc -C -o TimeSignals -W WinMain:TimeSignals -T link:exe -d 'F:\Èעלמ\Ïנמדנאללû matlab\TimeSignals\TimeSignals\for_testing' -v 'F:\Èעלמ\Ïנמדנאללû matlab\TimeSignals\TimeSignals.m' 
+Compiler version: 6.1 (R2015b)
+
+Dependency analysis by REQUIREMENTS.
+
+[Warning: Adding path "F:\Èעלמ\Ïנמדנאללû matlab\TimeSignals" to
+Compiler path instance.] 
+[] 
+Parsing file "F:\Èעלמ\Ïנמדנאללû matlab\TimeSignals\TimeSignals.m"
+	(Referenced from: "Compiler Command Line").
+Deleting 0 temporary MEX authorization files.
+Generating file "F:\Èעלמ\Ïנמדנאללû matlab\TimeSignals\TimeSignals\for_testing\readme.txt".
+Packaging...
+Adding custom icon C:\Program Files\MATLAB\R2015b\toolbox\compiler\Resources\default_icon.ico to F:\Èעלמ\Ïנמדנאללû matlab\TimeSignals\TimeSignals\for_testing\TimeSignals.exe.
+Attempting to embed the CTF archive into the application F:\Èעלמ\Ïנמדנאללû matlab\TimeSignals\TimeSignals\for_testing\TimeSignals.exe.
+Finished embedding CTF archive. Deleting the external CTF archive.
+Creating the bundle...
+Web based installer created at F:\Èעלמ\Ïנמדנאללû matlab\TimeSignals\TimeSignals\for_redistribution\MyAppInstaller_web.exe.
+Self contained installer created at F:\Èעלמ\Ïנמדנאללû matlab\TimeSignals\TimeSignals\for_redistribution\MyAppInstaller_mcr.exe.
+Packaging complete.
+Elapsed packaging time was: 10 minutes and 6 seconds.
